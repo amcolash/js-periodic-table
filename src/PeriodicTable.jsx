@@ -16,7 +16,6 @@ const colors = {
   'Unknown': '#e8e8e8'
 };
 
-const width = 75;
 const height = 80;
 const margin = 3;
 const border = 1;
@@ -33,13 +32,14 @@ export class PeriodicTable extends React.Component {
 
   render() {
     return (
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', textAlign: 'center', width: (width + (border + margin) * 2) * 18}}>
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', textAlign: 'center', maxWidth: 1600, width: '95vw'}}>
         {[...Array(9).keys()].map(r => {
           return [...Array(18).keys()].map(c => {
             const found = this.findEl(r + 1, c + 1) || {};
             const data = found.symbol ? pt.symbols[found.symbol] : undefined;
             const year = data ? data.yearDiscovered : undefined;
             const visible = data && (year <= this.state.year || year === 'Ancient');
+            const width = `calc(100% / 18 - 2 * ${margin + border}px)`;
 
             return <div style={{width, height, margin, borderWidth: border, borderStyle: 'solid', borderColor: data ? '#ccc' : 'transparent', backgroundColor: visible ? colors[found.category] : undefined}}>
               {visible ? <div style={{overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%', width: '100%'}}>

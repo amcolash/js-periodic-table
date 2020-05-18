@@ -3,6 +3,10 @@ A quick and dirty hack to make a periodic table with javascript and filter based
 
 ---
 
+Some data taken from: https://github.com/CodeDrome/interactive-periodic-table-javascript
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
