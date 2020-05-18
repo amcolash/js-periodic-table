@@ -1,24 +1,28 @@
 {
   "name": "periodic",
   "version": "0.1.0",
+  "homepage": "https://amcolash.github.io/js-periodic-table",
   "private": true,
   "dependencies": {
+    "periodic-table": "0.0.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "periodic-table": "0.0.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "gh-pages": "^2.2.0",
+    "prettier": "^2.0.5",
     "react-scripts": "3.4.1"
-  },
-  "devDependencies": {
-    "prettier": "^2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
